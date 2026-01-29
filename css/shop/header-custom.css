@@ -1,0 +1,839 @@
+/**
+ * 헤더 커스텀 CSS
+ * 작성일: 2026-01-29
+ * 버전: 1.5.0 - 검색창/배송일/장바구니 디자인 변경
+ */
+
+/* ============================================
+   1. 상단 GNB (로그인/마이두레/조합원센터) - 우측 정렬
+   ============================================ */
+.header_wrap .gnb_wrap {
+  background: #fff !important;
+  border-bottom: 1px solid #eee;
+}
+
+.header_wrap .gnb_wrap .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header_wrap .gnb_wrap a {
+  color: #666 !important;
+  font-size: 12px;
+}
+
+.header_wrap .gnb_wrap .gv_line {
+  margin: 0 10px;
+  color: #ddd;
+}
+
+/* ============================================
+   2. 메인 헤더 (로고 + 검색창 + 배송일/장바구니)
+   ============================================ */
+.header_wrap .head_visual {
+  background: #fff !important;
+  border-bottom: none !important;
+  padding: 18px 0 !important;
+}
+
+/* 로고 색상 변경 (흰색 -> 녹색) */
+.header_wrap .head_visual .home img {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(15%) saturate(1000%) hue-rotate(80deg) brightness(95%) !important;
+  height: 45px !important;
+}
+
+/* head_visual 내부 레이아웃 */
+.header_wrap .head_visual .inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px !important;
+  position: relative;
+}
+
+/* 로고 영역 - 좌측 */
+.header_wrap .head_visual .home {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   검색창 스타일 - 중앙 배치
+   ============================================ */
+.header_wrap .head_visual .header-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  height: 40px;
+}
+
+.header_wrap .head_visual .header-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  padding: 0 15px;
+  height: 100%;
+  color: #333;
+}
+
+.header_wrap .head_visual .header-search input::placeholder {
+  color: #999;
+}
+
+.header_wrap .head_visual .header-search button {
+  width: 40px;
+  height: 38px;
+  background: transparent !important;
+  border: none;
+  border-left: 1px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 검색 아이콘 */
+.header_wrap .head_visual .header-search button .icon_search {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  position: relative;
+}
+
+.header_wrap .head_visual .header-search button .icon_search::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #888;
+  bottom: -5px;
+  right: -1px;
+  transform: rotate(-45deg);
+}
+
+/* ============================================
+   헤더 우측 - 배송일 + 장바구니 (더 크게, 우측 정렬)
+   ============================================ */
+.header_wrap .head_visual .header-right-group {
+  display: flex !important;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-right: 0;
+}
+
+/* 공통 아이콘 버튼 스타일 */
+.header_wrap .head_visual .header-icon-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header_wrap .head_visual .header-icon-btn .icon {
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.2s;
+}
+
+.header_wrap .head_visual .header-icon-btn:hover .icon {
+  opacity: 0.7;
+}
+
+/* 배송일 아이콘 (캘린더) */
+.header_wrap .head_visual .header-delivery-btn .icon-calendar {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z'/%3E%3C/svg%3E");
+}
+
+/* 장바구니 아이콘 */
+.header_wrap .head_visual .header-cart-btn .icon-cart {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 24 24'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+}
+
+/* 장바구니 수량 배지 */
+.header_wrap .head_visual .header-cart-btn .num {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  min-width: 20px;
+  height: 20px;
+  background: #5A8648;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* 배송일 툴팁 */
+.header_wrap .head_visual .header-delivery-btn .tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #D4A84B;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.header_wrap .head_visual .header-delivery-btn .tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #D4A84B;
+}
+
+/* ============================================
+   3. 메뉴바 - 한살림 스타일 (단단한 디자인)
+   ============================================ */
+.header_wrap .head_menu_wrap {
+  background: #fff !important;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+
+.header_wrap .head_menu_wrap .inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* 메뉴 리스트 */
+.header_wrap .head_menu_wrap .menu_list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0;
+}
+
+.header_wrap .head_menu_wrap .menu_list > li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header_wrap .head_menu_wrap .menu_list > li > a {
+  display: flex !important;
+  align-items: center !important;
+  height: 48px !important;
+  padding: 0 20px !important;
+  color: #333 !important;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 48px !important;
+  transition: color 0.15s;
+  position: relative;
+}
+
+/* 메뉴 호버 - 상단 밑줄 (초록색만) */
+.header_wrap .head_menu_wrap .menu_list > li > a::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: #5A8648 !important;
+  transform: scaleX(0) !important;
+  transition: transform 0.2s ease !important;
+  width: auto !important;
+}
+
+/* 기존 오렌지색 ::after 밑줄 제거 */
+.header_wrap .head_menu_wrap .menu_list > li > a::after {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.header_wrap .head_menu_wrap .menu_list > li > a:hover::before,
+.header_wrap .head_menu_wrap .menu_list > li > a.on::before {
+  transform: scaleX(1) !important;
+}
+
+.header_wrap .head_menu_wrap .menu_list > li > a:hover::after {
+  width: 0 !important;
+  display: none !important;
+}
+
+.header_wrap .head_menu_wrap .menu_list li a:hover,
+.header_wrap .head_menu_wrap .menu_list li a.on {
+  color: #3D6041 !important;
+}
+
+/* 두레추천 오렌지 포인트 (작은 점) */
+.header_wrap .head_menu_wrap .menu_list li a.recommend {
+  position: relative;
+}
+
+.header_wrap .head_menu_wrap .menu_list li a.recommend::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  background: #FF5722;
+  border-radius: 50%;
+}
+
+/* 전체 생활재 보기 - 햄버거 메뉴 스타일 */
+.header_wrap .head_menu_wrap .btn_all_menu {
+  background: transparent !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  padding: 0 20px 0 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
+  border-right: 1px solid #eee;
+  margin-right: 5px;
+  position: relative;
+}
+
+/* 전체 생활재 보기 호버 - 상단 밑줄 */
+.header_wrap .head_menu_wrap .btn_all_menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #5A8648;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.header_wrap .head_menu_wrap .btn_all_menu:hover::before {
+  transform: scaleX(1);
+}
+
+.header_wrap .head_menu_wrap .btn_all_menu:hover {
+  color: #3D6041 !important;
+}
+
+.header_wrap .head_menu_wrap .btn_all_menu .icon {
+  width: 18px;
+  height: 14px;
+  background: none !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header_wrap .head_menu_wrap .btn_all_menu .icon::before,
+.header_wrap .head_menu_wrap .btn_all_menu .icon::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  border-radius: 1px;
+  position: absolute;
+}
+
+.header_wrap .head_menu_wrap .btn_all_menu .icon::before { top: 0; }
+.header_wrap .head_menu_wrap .btn_all_menu .icon::after { bottom: 0; }
+
+/* 가운데 줄 추가 */
+.header_wrap .head_menu_wrap .li_btn_all_menu .btn_all_menu .icon::after {
+  bottom: 6px;
+  box-shadow: 0 6px 0 #333;
+}
+
+/* 기존 아이콘 이미지 숨김 */
+.header_wrap .head_menu_wrap .btn_all_menu .icon img {
+  display: none !important;
+}
+
+/* ============================================
+   메뉴바 우측 - 배송일 + 장바구니
+   ============================================ */
+.header_wrap .head_menu_wrap .menu_right_group {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* 메뉴바 아이콘 버튼 스타일 */
+.header_wrap .head_menu_wrap .menu-icon-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header_wrap .head_menu_wrap .menu-icon-btn .icon {
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.2s;
+}
+
+.header_wrap .head_menu_wrap .menu-icon-btn:hover .icon {
+  opacity: 0.7;
+}
+
+/* 배송일 아이콘 (캘린더) */
+.header_wrap .head_menu_wrap .menu-delivery-btn .icon-calendar {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z'/%3E%3C/svg%3E");
+}
+
+/* 장바구니 아이콘 */
+.header_wrap .head_menu_wrap .menu-cart-btn .icon-cart {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 24 24'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+}
+
+/* 장바구니 수량 배지 */
+.header_wrap .head_menu_wrap .menu-cart-btn .num {
+  position: absolute;
+  top: 8px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  background: #5A8648;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* 배송일 툴팁 */
+.header_wrap .head_menu_wrap .menu-delivery-btn .tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #D4A84B;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.header_wrap .head_menu_wrap .menu-delivery-btn .tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #D4A84B;
+}
+
+/* 기존 search_cart_group 숨기기 */
+.header_wrap .head_menu_wrap .search_cart_group {
+  display: none !important;
+}
+
+/* ============================================
+   검색 드롭다운 위치 - 검색창 바로 아래 (고정 위치)
+   ============================================ */
+.header_wrap .head_menu_wrap .search_keyword_wrap {
+  position: fixed !important;
+  top: 130px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
+  width: 800px !important;
+  max-width: 90vw;
+  z-index: 9999 !important;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   4. 스크롤 시 헤더 고정 상태
+   ============================================ */
+.header_wrap.move .head_visual {
+  background: #fff !important;
+}
+
+.header_wrap.move .head_menu_wrap {
+  background: #fff !important;
+}
+
+/* ============================================
+   배송일 선택 팝업 - 깔끔한 쇼핑몰 스타일
+   ============================================ */
+
+/* 팝업 오버레이 */
+.delivery_date_wrap {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 팝업 박스 */
+.delivery_date_wrap .in_box {
+  width: 440px !important;
+  max-width: 90vw !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden !important;
+}
+
+/* 타이틀 헤더 */
+.delivery_date_wrap .in_box > .title_box {
+  background: #3D6041 !important;
+  color: #fff !important;
+  padding: 16px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* 회원정보 + 배송유형 영역 */
+.delivery_date_wrap .txt_box {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 24px !important;
+  margin: 0 !important;
+  background: #f8f9fa !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.delivery_date_wrap .txt_box .b_txt {
+  font-size: 14px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+  letter-spacing: -0.3px !important;
+}
+
+.delivery_date_wrap .txt_box .txt {
+  display: inline-block !important;
+  padding: 6px 14px !important;
+  background: #3D6041 !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+/* 배송일 선택 영역 */
+.delivery_date_wrap .delivery_chk_list {
+  padding: 20px 24px !important;
+  margin: 0 !important;
+  background: #fff !important;
+}
+
+.delivery_date_wrap .delivery_chk_list > .tt {
+  font-size: 13px !important;
+  color: #666 !important;
+  font-weight: 500 !important;
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+  letter-spacing: -0.3px !important;
+}
+
+/* 날짜 선택 리스트 컨테이너 */
+.delivery_date_wrap .delivery_chk_list .in {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+/* 선택 가능한 날짜 - 라디오 있는 경우 */
+.delivery_date_wrap .delivery_chk_list .check_wrap {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  transition: all 0.15s ease !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .check_wrap:hover {
+  border-color: #3D6041 !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .check_wrap + .check_wrap {
+  margin-top: 0 !important;
+}
+
+/* 라디오 버튼 - 숨김 유지 (기존 방식) */
+.delivery_date_wrap .delivery_chk_list .check_wrap input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* 라벨 스타일 - 선택 가능 */
+.delivery_date_wrap .delivery_chk_list .check_wrap input[type=radio]:not(old) + label {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 16px 14px 46px !important;
+  background: #fff !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  letter-spacing: -0.3px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+/* 커스텀 라디오 버튼 */
+.delivery_date_wrap .delivery_chk_list .check_wrap input[type=radio]:not(old) + label:before {
+  position: absolute !important;
+  content: '' !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  border: 2px solid #ccc !important;
+  background: #fff !important;
+  top: 50% !important;
+  left: 14px !important;
+  transform: translateY(-50%) !important;
+  transition: all 0.15s ease !important;
+}
+
+/* 선택된 상태 */
+.delivery_date_wrap .delivery_chk_list .check_wrap input[type=radio]:not(old):checked + label {
+  background: #e8f5e9 !important;
+  color: #2e7d32 !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .check_wrap input[type=radio]:not(old):checked + label:before {
+  border: 6px solid #3D6041 !important;
+  background: #fff !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .check_wrap:has(input:checked) {
+  border-color: #3D6041 !important;
+  border-width: 2px !important;
+}
+
+/* 마감된 날짜 - 숨김 처리 */
+.delivery_date_wrap .delivery_chk_list .check_wrap.none_chk {
+  display: none !important;
+}
+
+/* 안내 문구 - 접힘 */
+.delivery_date_wrap .delivery-notice {
+  display: none !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .notice-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  margin-top: 16px !important;
+  padding: 12px !important;
+  font-size: 13px !important;
+  color: #888 !important;
+  cursor: pointer !important;
+  border-top: 1px dashed #e0e0e0 !important;
+  background: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .notice-toggle:hover {
+  color: #3D6041 !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .notice-toggle .arrow {
+  font-size: 10px !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .notice-content {
+  display: none !important;
+  margin-top: 12px !important;
+  padding: 14px 16px !important;
+  background: #fff8f8 !important;
+  border: 1px solid #ffcdd2 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  color: #c62828 !important;
+  line-height: 1.8 !important;
+}
+
+.delivery_date_wrap .delivery_chk_list .notice-content.show {
+  display: block !important;
+}
+
+/* 배송지 영역 */
+.delivery_date_wrap .delivery_add {
+  padding: 16px 24px !important;
+  margin: 0 !important;
+  background: #f8f9fa !important;
+  border-top: 1px solid #eee !important;
+}
+
+.delivery_date_wrap .delivery_add .tt {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.delivery_date_wrap .delivery_add .tt span {
+  display: inline-block !important;
+  padding: 4px 12px !important;
+  background: #fff !important;
+  border: 1px solid #3D6041 !important;
+  color: #3D6041 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+}
+
+.delivery_date_wrap .delivery_add .tt .more {
+  display: none !important;
+}
+
+.delivery_date_wrap .delivery_add .input_green {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  padding: 12px 14px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+/* 버튼 영역 */
+.delivery_date_wrap .btn_box {
+  padding: 20px 24px !important;
+  margin: 0 !important;
+  background: #fff !important;
+  border-top: 1px solid #eee !important;
+}
+
+.delivery_date_wrap .btn_box .inner {
+  display: flex !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.delivery_date_wrap .btn_box .inner li {
+  flex: 1 !important;
+  display: block !important;
+  width: auto !important;
+  padding: 0 !important;
+}
+
+.delivery_date_wrap .btn_box .inner li + li {
+  padding-left: 0 !important;
+}
+
+.delivery_date_wrap .btn_box .btn_white,
+.delivery_date_wrap .btn_box .btn_green {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 48px !important;
+  line-height: 1 !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.delivery_date_wrap .btn_box .btn_white {
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  color: #666 !important;
+}
+
+.delivery_date_wrap .btn_box .btn_white:hover {
+  background: #f5f5f5 !important;
+  border-color: #ccc !important;
+}
+
+.delivery_date_wrap .btn_box .btn_green {
+  background: #3D6041 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.delivery_date_wrap .btn_box .btn_green:hover {
+  background: #2d4a31 !important;
+}
