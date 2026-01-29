@@ -321,6 +321,15 @@
 	margin-top: 8px;
 	line-height: 1.5;
 }
+
+/* 페이지 버전 정보 */
+.page-version {
+	text-align: center;
+	padding: 12px 0;
+	margin-top: 16px;
+	font-size: 11px;
+	color: #999;
+}
 </style>
 
 <div class="cart_wrap">
@@ -504,6 +513,9 @@
 					<span class="info-divider">|</span>
 					<span class="info-item"><strong>주문마감</strong> 공급 1일 전 오전 11:30</span>
 				</div>
+
+				<!-- 버전 정보 -->
+				<div class="page-version">v2.0.0</div>
 			</div>
 
 			<!-- 우측: 결제 박스 -->
