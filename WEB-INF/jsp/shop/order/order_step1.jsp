@@ -1,3 +1,13 @@
+<%--
+================================================================================
+  파일명: order_step1.jsp
+  버전: v2.0.0
+  수정일: 2026-01-29
+  수정자: 이지원
+  설명: 쿠폰/포인트 사용 페이지 (오아시스마켓 스타일 리뉴얼)
+================================================================================
+--%>
+<!-- PAGE_VERSION: v2.0.0 | 2026-01-29 | order_step1.jsp -->
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
