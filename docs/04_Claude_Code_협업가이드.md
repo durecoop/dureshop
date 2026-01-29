@@ -257,8 +257,30 @@ Claude Code에게 요청:
 
 Claude Code가 실행:
 ```bash
-curl -u tester2:1234 -T "파일경로" "ftp://100.100.1.54/경로"
+curl -u tester2:1234 -T "파일경로" "ftp://100.100.1.54/DureShop/경로"
 ```
+
+#### FTP 서버 정보
+
+| 항목 | 값 |
+|------|-----|
+| 호스트 | 100.100.1.54 |
+| 사용자 | tester2 |
+| 비밀번호 | 1234 |
+| 포트 | 21 |
+
+#### FTP 경로 매핑
+
+| 로컬 경로 (DURE_SHOP/) | FTP 서버 경로 |
+|------------------------|---------------|
+| `WEB-INF/jsp/shop/cart/` | `/DureShop/WEB-INF/jsp/shop/cart/` |
+| `WEB-INF/jsp/shop/order/` | `/DureShop/WEB-INF/jsp/shop/order/` |
+| `WEB-INF/jsp/shop/main/` | `/DureShop/WEB-INF/jsp/shop/main/` |
+| `WEB-INF/jsp/shop/prod/` | `/DureShop/WEB-INF/jsp/shop/prod/` |
+| `css/shop/` | `/DureShop/css/shop/` |
+| `js/shop/` | `/DureShop/js/shop/` |
+
+> **중요:** FTP 업로드 시 반드시 `/DureShop/` 경로를 붙여야 합니다!
 
 ### 5.5 한눈에 보는 흐름
 
