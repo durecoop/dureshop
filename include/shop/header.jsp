@@ -68,8 +68,6 @@
 					<li><a href="<c:url value='/benefit.do' />" class="benefit<c:if test="${fn:indexOf(sysCurrentUrl, 'benefit.do') > -1}"> on</c:if>">더큰혜택</a></li>
 					<li><a href="<c:url value='/new.do' />" class="new<c:if test="${fn:indexOf(sysCurrentUrl, 'new.do') > -1}"> on</c:if>">신규생활재</a></li>
 					<li><a href="<c:url value='/reservation.do' />" class="reservation<c:if test="${fn:indexOf(sysCurrentUrl, 'reservation.do') > -1}"> on</c:if>">사전예약</a></li>
-					<li><a href="<c:url value='/recipe.do' />" class="recipe<c:if test="${fn:indexOf(sysCurrentUrl, 'recipe.do') > -1}"> on</c:if>">요리조리</a></li>
-					<li><a href="<c:url value='/story.do' />" class="story<c:if test="${fn:indexOf(sysCurrentUrl, 'story.do') > -1}"> on</c:if>">두레이야기</a></li>
 				</ul>
 				<!-- 배송일 + 장바구니 (메뉴바 우측) -->
 				<div class="menu_right_group">

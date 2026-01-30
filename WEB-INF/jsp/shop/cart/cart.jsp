@@ -638,6 +638,9 @@
 	</div>
 </div>
 
+<!-- 하단 서브 메뉴 -->
+<jsp:include page="/include/shop/footer.jsp" />
+
 <!-- 배송일 선택 팝업 -->
 <div class="mark_shadow"></div>
 <div class="delivery_date_modify_wrap">
