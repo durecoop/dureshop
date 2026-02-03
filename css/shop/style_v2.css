@@ -24791,10 +24791,12 @@ body .img_wrap img,
     align-items: center !important;
     width: 100% !important;
     min-height: 72px !important;
+    gap: 0 !important;
 }
 
-/* 1. 체크박스 - 왼쪽 고정 */
+/* 1. 체크박스 - 맨 왼쪽 (order: 1) */
 .cart_wrap .content_list .content .chk_box {
+    order: 1 !important;
     width: 40px !important;
     min-width: 40px !important;
     height: 72px !important;
@@ -24812,8 +24814,9 @@ body .img_wrap img,
     margin: 0 !important;
 }
 
-/* 2. 상품 영역 (이미지 + 텍스트) - 중앙 확장 */
+/* 2. 상품 영역 (이미지 + 텍스트) - 중앙 확장 (order: 2) */
 .cart_wrap .content_list .content .prod {
+    order: 2 !important;
     flex: 1 !important;
     display: flex !important;
     flex-direction: row !important;
@@ -24893,8 +24896,9 @@ body .img_wrap img,
     margin-right: 4px !important;
 }
 
-/* 3. 수량/합계/삭제 - 오른쪽 고정 */
+/* 3. 수량/합계 - 오른쪽 (order: 3) */
 .cart_wrap .content_list .content .sum_quantity {
+    order: 3 !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -24977,16 +24981,14 @@ body .img_wrap img,
     white-space: nowrap !important;
 }
 
-/* 4. 삭제 버튼 - 절대 위치 강제 해제 */
+/* 4. 삭제 버튼 - 맨 오른쪽 (order: 4) */
+.cart_wrap .content_list .btn_delete,
 .cart_wrap .content_list .del,
 .cart_wrap .content_list .btn_del,
-.cart_wrap .content_list .content .del,
-.cart_wrap .content_list .content > .del,
-.cart_wrap .content_list .content a.del,
-.cart_wrap .content_list .sum_quantity .del,
-.cart_wrap .content_list .prod_wrap .del {
+.cart_wrap .content_list .prod_wrap .btn_delete,
+.cart_wrap .content_list .prod_wrap > button {
+    order: 4 !important;
     position: static !important;
-    position: relative !important;
     top: unset !important;
     right: unset !important;
     bottom: unset !important;
@@ -25003,19 +25005,21 @@ body .img_wrap img,
     justify-content: center !important;
     cursor: pointer !important;
     transition: all 0.2s !important;
-    margin: 0 !important;
+    margin: 0 0 0 16px !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
+    font-size: 0 !important;
 }
 
+.cart_wrap .content_list .btn_delete:hover,
 .cart_wrap .content_list .del:hover,
 .cart_wrap .content_list .btn_del:hover {
     background: #ffebee !important;
 }
 
+.cart_wrap .content_list .btn_delete::after,
 .cart_wrap .content_list .del::after,
-.cart_wrap .content_list .btn_del::after,
-.cart_wrap .content_list .content .del::after {
+.cart_wrap .content_list .btn_del::after {
     content: '×' !important;
     font-size: 20px !important;
     font-weight: 300 !important;
@@ -25023,21 +25027,18 @@ body .img_wrap img,
     line-height: 1 !important;
 }
 
+.cart_wrap .content_list .btn_delete:hover::after,
 .cart_wrap .content_list .del:hover::after,
 .cart_wrap .content_list .btn_del:hover::after {
     color: #e53935 !important;
 }
 
+.cart_wrap .content_list .btn_delete img,
 .cart_wrap .content_list .del img,
-.cart_wrap .content_list .btn_del img,
-.cart_wrap .content_list .content .del img {
+.cart_wrap .content_list .btn_del img {
     display: none !important;
 }
 
-/* 삭제 버튼이 prod_wrap 밖에 있을 경우 숨김 */
-.cart_wrap .content_list .content > .del {
-    display: none !important;
-}
 
 /* 쿠폰 영역 숨김 */
 .cart_wrap .con_coupon_wrap {
