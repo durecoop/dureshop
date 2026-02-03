@@ -24769,10 +24769,26 @@ body .img_wrap img,
    [체크] [썸네일+상품명] [수량] [합계] [삭제]
    ======================================== */
 
-/* 택배 배송 안내 메시지 숨김 */
+/* 택배 배송 안내 메시지 완전 숨김 */
 .cart_wrap .delivery-warning,
-.delivery-warning {
+.delivery-warning,
+.cart_wrap .address_wrap tr:last-child,
+.cart_wrap .address_wrap .warning,
+.cart_wrap .address_wrap td[colspan],
+.cart_wrap .address_wrap p[style*="color"],
+.cart_wrap .address_wrap span[style*="color"],
+.cart_wrap p[style*="red"],
+.cart_wrap p[style*="e74c3c"],
+.cart_wrap span[style*="red"],
+.cart_wrap .txt_warning,
+.cart_wrap .notice_txt,
+.cart_wrap .caution {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* 상품 아이템 외부 컨테이너 */
