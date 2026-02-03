@@ -24888,6 +24888,26 @@ body .img_wrap img,
     padding: 0 !important;
 }
 
+/* 결제박스 - 적립쿠폰/할인쿠폰/결제쿠폰/배송비 숨김 */
+.cart_wrap .price_box tr:has(#id_couponAmtS_0),
+.cart_wrap .price_box tr:has(#id_couponAmtS_1),
+.cart_wrap .price_box tr:has(#id_couponAmtS_2),
+.cart_wrap .price_box tr:has(#id_couponAmtS_3),
+.cart_wrap .price_box tr:has(#id_couponAmtD_0),
+.cart_wrap .price_box tr:has(#id_couponAmtD_1),
+.cart_wrap .price_box tr:has(#id_couponAmtD_2),
+.cart_wrap .price_box tr:has(#id_couponAmtD_3),
+.cart_wrap .price_box tr:has(#id_couponAmtP_0),
+.cart_wrap .price_box tr:has(#id_couponAmtP_1),
+.cart_wrap .price_box tr:has(#id_couponAmtP_2),
+.cart_wrap .price_box tr:has(#id_couponAmtP_3),
+.cart_wrap .price_box tr:has(#id_deliveryAmt_0),
+.cart_wrap .price_box tr:has(#id_deliveryAmt_1),
+.cart_wrap .price_box tr:has(#id_deliveryAmt_2),
+.cart_wrap .price_box tr:has(#id_deliveryAmt_3) {
+    display: none !important;
+}
+
 /* 상품 아이템 외부 컨테이너 */
 .cart_wrap .content_list .content {
     position: relative !important;
