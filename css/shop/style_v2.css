@@ -24765,7 +24765,7 @@ body .img_wrap img,
 }
 
 /* ========================================
-   장바구니 상품 리스트 v4 - 한 줄 레이아웃
+   장바구니 상품 리스트 v5 - 완벽한 한 줄 정렬
    [체크] [썸네일] [상품명/단가] [수량] [합계] [삭제]
    ======================================== */
 
@@ -24775,22 +24775,29 @@ body .img_wrap img,
     display: none !important;
 }
 
-/* 상품 아이템 - 메인 컨테이너 */
+/* 상품 아이템 외부 컨테이너 */
 .cart_wrap .content_list .content {
     position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 20px 0 !important;
+    display: block !important;
+    padding: 18px 0 !important;
     border-bottom: 1px solid #f0f0f0 !important;
     background: #fff !important;
 }
 
-/* 체크박스 */
-.cart_wrap .content_list .content > .chk_box,
+/* ★★★ prod_wrap - 핵심 가로 정렬 컨테이너 ★★★ */
+.cart_wrap .content_list .content .prod_wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 72px !important;
+}
+
+/* 1. 체크박스 - 왼쪽 고정 */
 .cart_wrap .content_list .content .chk_box {
-    position: relative !important;
-    width: 44px !important;
-    min-width: 44px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 72px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -24798,31 +24805,34 @@ body .img_wrap img,
 }
 
 .cart_wrap .content_list .chk_box input[type="checkbox"] {
-    width: 22px !important;
-    height: 22px !important;
+    width: 20px !important;
+    height: 20px !important;
     accent-color: #5a8648 !important;
     cursor: pointer !important;
+    margin: 0 !important;
 }
 
-/* 상품 영역 (이미지 + 텍스트) */
-.cart_wrap .content_list .content > .prod,
+/* 2. 상품 영역 (이미지 + 텍스트) - 중앙 확장 */
 .cart_wrap .content_list .content .prod {
     flex: 1 !important;
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 14px !important;
     min-width: 0 !important;
-    padding-right: 24px !important;
+    height: 72px !important;
 }
 
-/* 상품 내부 링크도 가로 정렬 */
-.cart_wrap .content_list .prod a {
+/* 상품 내부 링크/div도 가로 정렬 */
+.cart_wrap .content_list .prod > a,
+.cart_wrap .content_list .prod > div {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 14px !important;
     text-decoration: none !important;
-    flex: 1 !important;
-    min-width: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* 썸네일 이미지 */
@@ -24830,6 +24840,7 @@ body .img_wrap img,
     width: 72px !important;
     height: 72px !important;
     min-width: 72px !important;
+    max-width: 72px !important;
     border-radius: 8px !important;
     overflow: hidden !important;
     border: 1px solid #eee !important;
@@ -24841,12 +24852,17 @@ body .img_wrap img,
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    display: block !important;
 }
 
 /* 상품명 + 단가 */
 .cart_wrap .content_list .txt_box {
     flex: 1 !important;
     min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-right: 20px !important;
 }
 
 .cart_wrap .content_list .txt_box .tt {
@@ -24877,12 +24893,14 @@ body .img_wrap img,
     margin-right: 4px !important;
 }
 
-/* 수량/합계/삭제 컨테이너 */
-.cart_wrap .content_list .sum_quantity {
+/* 3. 수량/합계/삭제 - 오른쪽 고정 */
+.cart_wrap .content_list .content .sum_quantity {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    gap: 20px !important;
+    gap: 16px !important;
     flex-shrink: 0 !important;
+    height: 72px !important;
 }
 
 /* 수량 조절기 */
@@ -24959,25 +24977,35 @@ body .img_wrap img,
     white-space: nowrap !important;
 }
 
-/* 삭제 버튼 - 위치 고정 해제하고 플로우에 포함 */
+/* 4. 삭제 버튼 - 절대 위치 강제 해제 */
 .cart_wrap .content_list .del,
 .cart_wrap .content_list .btn_del,
-.cart_wrap .content_list .content > a.del {
+.cart_wrap .content_list .content .del,
+.cart_wrap .content_list .content > .del,
+.cart_wrap .content_list .content a.del,
+.cart_wrap .content_list .sum_quantity .del,
+.cart_wrap .content_list .prod_wrap .del {
+    position: static !important;
     position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    width: 30px !important;
-    height: 30px !important;
-    min-width: 30px !important;
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    float: none !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
     background: #f5f5f5 !important;
     border: none !important;
     border-radius: 50% !important;
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
     transition: all 0.2s !important;
-    margin-left: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 .cart_wrap .content_list .del:hover,
@@ -24987,10 +25015,10 @@ body .img_wrap img,
 
 .cart_wrap .content_list .del::after,
 .cart_wrap .content_list .btn_del::after,
-.cart_wrap .content_list .content > a.del::after {
+.cart_wrap .content_list .content .del::after {
     content: '×' !important;
-    font-size: 18px !important;
-    font-weight: 400 !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
     color: #999 !important;
     line-height: 1 !important;
 }
@@ -25002,7 +25030,12 @@ body .img_wrap img,
 
 .cart_wrap .content_list .del img,
 .cart_wrap .content_list .btn_del img,
-.cart_wrap .content_list .content > a.del img {
+.cart_wrap .content_list .content .del img {
+    display: none !important;
+}
+
+/* 삭제 버튼이 prod_wrap 밖에 있을 경우 숨김 */
+.cart_wrap .content_list .content > .del {
     display: none !important;
 }
 
@@ -25013,18 +25046,19 @@ body .img_wrap img,
 
 /* ===== 반응형 - 태블릿 ===== */
 @media (max-width: 900px) {
-    .cart_wrap .content_list .content {
+    .cart_wrap .content_list .content .prod_wrap {
         flex-wrap: wrap !important;
     }
 
-    .cart_wrap .content_list .chk_box {
+    .cart_wrap .content_list .content .chk_box {
         width: 36px !important;
         min-width: 36px !important;
+        height: 60px !important;
     }
 
-    .cart_wrap .content_list .prod {
-        flex: 1 !important;
-        padding-right: 16px !important;
+    .cart_wrap .content_list .content .prod {
+        flex: 1 1 calc(100% - 36px) !important;
+        height: 60px !important;
     }
 
     .cart_wrap .content_list .img_wrap {
@@ -25033,7 +25067,7 @@ body .img_wrap img,
         min-width: 60px !important;
     }
 
-    .cart_wrap .content_list .sum_quantity {
+    .cart_wrap .content_list .content .sum_quantity {
         width: 100% !important;
         margin-top: 12px !important;
         padding-left: 36px !important;
