@@ -24765,8 +24765,8 @@ body .img_wrap img,
 }
 
 /* ========================================
-   장바구니 상품 리스트 v5 - 완벽한 한 줄 정렬
-   [체크] [썸네일] [상품명/단가] [수량] [합계] [삭제]
+   장바구니 상품 리스트 v7 - CSS GRID 레이아웃
+   [체크] [썸네일+상품명] [수량] [합계] [삭제]
    ======================================== */
 
 /* 택배 배송 안내 메시지 숨김 */
@@ -24779,35 +24779,30 @@ body .img_wrap img,
 .cart_wrap .content_list .content {
     position: relative !important;
     display: block !important;
-    padding: 18px 0 !important;
+    padding: 16px 0 !important;
     border-bottom: 1px solid #f0f0f0 !important;
     background: #fff !important;
 }
 
-/* ★★★ prod_wrap - 핵심 가로 정렬 컨테이너 ★★★ */
+/* ★★★ prod_wrap - CSS GRID 컨테이너 ★★★ */
 .cart_wrap .content_list .content .prod_wrap {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    display: grid !important;
+    grid-template-columns: 40px 1fr auto 32px !important;
+    grid-template-areas: "chk prod sumqty del" !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    gap: 16px !important;
     width: 100% !important;
-    min-height: 72px !important;
-    gap: 0 !important;
+    min-height: 70px !important;
 }
 
-/* 1. 체크박스 - 맨 왼쪽 (order: 1) */
+/* 1. 체크박스 - grid-area: chk */
 .cart_wrap .content_list .content .prod_wrap > .chk_box {
-    order: 1 !important;
-    width: 40px !important;
-    min-width: 40px !important;
-    max-width: 40px !important;
-    height: 72px !important;
+    grid-area: chk !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-shrink: 0 !important;
-    flex-grow: 0 !important;
+    width: 40px !important;
+    height: 70px !important;
 }
 
 .cart_wrap .content_list .chk_box input[type="checkbox"] {
@@ -24818,36 +24813,30 @@ body .img_wrap img,
     margin: 0 !important;
 }
 
-/* 2. 상품 영역 (이미지 + 텍스트) - 중앙 확장 (order: 2) */
+/* 2. 상품 영역 - grid-area: prod */
 .cart_wrap .content_list .content .prod_wrap > .prod {
-    order: 2 !important;
-    flex: 1 1 auto !important;
+    grid-area: prod !important;
     display: flex !important;
-    flex-direction: row !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: 12px !important;
     min-width: 0 !important;
-    height: 72px !important;
+    height: 70px !important;
 }
 
-/* 상품 내부 링크/div도 가로 정렬 */
 .cart_wrap .content_list .prod > a,
 .cart_wrap .content_list .prod > div {
     display: flex !important;
-    flex-direction: row !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: 12px !important;
     text-decoration: none !important;
     width: 100% !important;
-    height: 100% !important;
 }
 
 /* 썸네일 이미지 */
 .cart_wrap .content_list .img_wrap {
-    width: 72px !important;
-    height: 72px !important;
-    min-width: 72px !important;
-    max-width: 72px !important;
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
     border-radius: 8px !important;
     overflow: hidden !important;
     border: 1px solid #eee !important;
@@ -24859,21 +24848,16 @@ body .img_wrap img,
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    display: block !important;
 }
 
 /* 상품명 + 단가 */
 .cart_wrap .content_list .txt_box {
     flex: 1 !important;
     min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    padding-right: 20px !important;
 }
 
 .cart_wrap .content_list .txt_box .tt {
-    font-size: 15px !important;
+    font-size: 14px !important;
     font-weight: 500 !important;
     color: #333 !important;
     line-height: 1.4 !important;
@@ -24888,7 +24872,7 @@ body .img_wrap img,
 }
 
 .cart_wrap .content_list .txt_box .s_price {
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: #888 !important;
 }
 
@@ -24896,20 +24880,17 @@ body .img_wrap img,
 .cart_wrap .content_list .txt_box .s_price .sale {
     color: #bbb !important;
     text-decoration: line-through !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     margin-right: 4px !important;
 }
 
-/* 3. 수량/합계 - 오른쪽 (order: 3) */
+/* 3. 수량+합계 - grid-area: sumqty */
 .cart_wrap .content_list .content .prod_wrap > .sum_quantity {
-    order: 3 !important;
+    grid-area: sumqty !important;
     display: flex !important;
-    flex-direction: row !important;
     align-items: center !important;
     gap: 16px !important;
-    flex-shrink: 0 !important;
-    flex-grow: 0 !important;
-    height: 72px !important;
+    height: 70px !important;
 }
 
 /* 수량 조절기 */
@@ -24924,25 +24905,22 @@ body .img_wrap img,
 
 .cart_wrap .spinner_box .minus,
 .cart_wrap .spinner_box .plus {
-    width: 34px !important;
-    height: 34px !important;
+    width: 32px !important;
+    height: 32px !important;
     background: #fafafa !important;
     border: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
-    transition: background 0.15s !important;
-    font-size: 18px !important;
-    color: #666 !important;
+    font-size: 0 !important;
 }
 
 .cart_wrap .spinner_box .minus:hover,
 .cart_wrap .spinner_box .plus:hover {
-    background: #f0f0f0 !important;
+    background: #eee !important;
 }
 
-/* 기존 이미지/텍스트 숨기고 CSS로 버튼 표시 */
 .cart_wrap .spinner_box .minus img,
 .cart_wrap .spinner_box .plus img {
     display: none !important;
@@ -24950,13 +24928,13 @@ body .img_wrap img,
 
 .cart_wrap .spinner_box .minus::after {
     content: '−' !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
     color: #555 !important;
 }
 
 .cart_wrap .spinner_box .plus::after {
     content: '+' !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
     color: #555 !important;
 }
 
@@ -24966,84 +24944,65 @@ body .img_wrap img,
 }
 
 .cart_wrap .spinner_box .idx input {
-    width: 44px !important;
-    height: 34px !important;
+    width: 40px !important;
+    height: 32px !important;
     text-align: center !important;
-    font-size: 15px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     color: #333 !important;
     border: none !important;
     background: #fff !important;
 }
 
-/* 합계 금액 */
+/* 4. 합계 금액 (sum_quantity 안) */
 .cart_wrap .content_list .b_price {
-    min-width: 85px !important;
+    min-width: 75px !important;
     text-align: right !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
     color: #222 !important;
     white-space: nowrap !important;
 }
 
-/* 4. 삭제 버튼 - 맨 오른쪽 (order: 4) */
-.cart_wrap .content_list .btn_delete,
-.cart_wrap .content_list .del,
-.cart_wrap .content_list .btn_del,
-.cart_wrap .content_list .prod_wrap .btn_delete,
-.cart_wrap .content_list .prod_wrap > button {
-    order: 4 !important;
+/* 5. 삭제 버튼 - grid-area: del */
+.cart_wrap .content_list .content .prod_wrap > .btn_delete,
+.cart_wrap .content_list .content .prod_wrap > button {
+    grid-area: del !important;
     position: static !important;
     top: unset !important;
     right: unset !important;
-    bottom: unset !important;
-    left: unset !important;
-    float: none !important;
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
+    width: 30px !important;
+    height: 30px !important;
     background: #f5f5f5 !important;
     border: none !important;
     border-radius: 50% !important;
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
-    transition: all 0.2s !important;
-    margin: 0 0 0 16px !important;
-    padding: 0 !important;
-    flex-shrink: 0 !important;
     font-size: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.cart_wrap .content_list .btn_delete:hover,
-.cart_wrap .content_list .del:hover,
-.cart_wrap .content_list .btn_del:hover {
+.cart_wrap .content_list .btn_delete:hover {
     background: #ffebee !important;
 }
 
-.cart_wrap .content_list .btn_delete::after,
-.cart_wrap .content_list .del::after,
-.cart_wrap .content_list .btn_del::after {
+.cart_wrap .content_list .btn_delete::after {
     content: '×' !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 300 !important;
     color: #999 !important;
-    line-height: 1 !important;
 }
 
-.cart_wrap .content_list .btn_delete:hover::after,
-.cart_wrap .content_list .del:hover::after,
-.cart_wrap .content_list .btn_del:hover::after {
+.cart_wrap .content_list .btn_delete:hover::after {
     color: #e53935 !important;
 }
 
-.cart_wrap .content_list .btn_delete img,
-.cart_wrap .content_list .del img,
-.cart_wrap .content_list .btn_del img {
+.cart_wrap .content_list .btn_delete img {
     display: none !important;
 }
-
 
 /* 쿠폰 영역 숨김 */
 .cart_wrap .con_coupon_wrap {
@@ -25051,72 +25010,63 @@ body .img_wrap img,
 }
 
 /* ===== 반응형 - 태블릿 ===== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .cart_wrap .content_list .content .prod_wrap {
-        flex-wrap: wrap !important;
+        grid-template-columns: 36px 1fr auto 28px !important;
+        grid-template-areas:
+            "chk prod prod del"
+            ". sumqty sumqty ." !important;
+        gap: 8px !important;
+        row-gap: 10px !important;
     }
 
-    .cart_wrap .content_list .content .chk_box {
-        width: 36px !important;
-        min-width: 36px !important;
-        height: 60px !important;
-    }
-
-    .cart_wrap .content_list .content .prod {
-        flex: 1 1 calc(100% - 36px) !important;
-        height: 60px !important;
+    .cart_wrap .content_list .content .prod_wrap > .chk_box {
+        height: auto !important;
+        align-self: start !important;
+        padding-top: 8px !important;
     }
 
     .cart_wrap .content_list .img_wrap {
-        width: 60px !important;
-        height: 60px !important;
-        min-width: 60px !important;
+        width: 56px !important;
+        height: 56px !important;
+        min-width: 56px !important;
     }
 
-    .cart_wrap .content_list .content .sum_quantity {
-        width: 100% !important;
-        margin-top: 12px !important;
-        padding-left: 36px !important;
+    .cart_wrap .content_list .content .prod_wrap > .sum_quantity {
         justify-content: space-between !important;
-        gap: 10px !important;
-    }
-
-    .cart_wrap .content_list .b_price {
-        flex: 1 !important;
-        text-align: right !important;
-        min-width: auto !important;
+        height: auto !important;
     }
 }
 
 @media (max-width: 480px) {
     .cart_wrap .content_list .content {
-        padding: 16px 0 !important;
+        padding: 14px 0 !important;
     }
 
     .cart_wrap .content_list .img_wrap {
-        width: 64px !important;
-        height: 64px !important;
-        min-width: 64px !important;
-        max-width: 64px !important;
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
     }
 
     .cart_wrap .content_list .txt_box .tt {
-        font-size: 14px !important;
+        font-size: 13px !important;
     }
 
     .cart_wrap .spinner_box .minus,
     .cart_wrap .spinner_box .plus {
-        width: 32px !important;
-        height: 32px !important;
+        width: 28px !important;
+        height: 28px !important;
     }
 
     .cart_wrap .spinner_box .idx input {
-        width: 40px !important;
-        height: 32px !important;
+        width: 36px !important;
+        height: 28px !important;
+        font-size: 13px !important;
     }
 
     .cart_wrap .content_list .b_price {
-        font-size: 16px !important;
-        min-width: 70px !important;
+        font-size: 14px !important;
+        min-width: 65px !important;
     }
 }
