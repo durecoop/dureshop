@@ -24763,3 +24763,261 @@ body .img_wrap img,
         padding: 20px !important;
     }
 }
+
+/* ========================================
+   장바구니 상품 리스트 개선 v2
+   ======================================== */
+
+/* 택배 배송 안내 메시지 숨김 */
+.cart_wrap .delivery-warning,
+.cart_wrap .address_wrap .delivery-warning {
+    display: none !important;
+}
+
+/* 상품 카드 개선 */
+.cart_wrap .content_list .content {
+    display: flex !important;
+    align-items: center !important;
+    padding: 16px 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    gap: 0 !important;
+}
+
+/* 체크박스 영역 */
+.cart_wrap .content_list .content .chk_box {
+    width: 40px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cart_wrap .content_list .content .chk_box input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    accent-color: #5a8648 !important;
+    cursor: pointer !important;
+}
+
+/* 상품 정보 영역 */
+.cart_wrap .content_list .content .prod {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    min-width: 0 !important;
+}
+
+/* 상품 이미지 */
+.cart_wrap .content_list .content .img_wrap {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border: 1px solid #eee !important;
+    background: #fafafa !important;
+}
+
+.cart_wrap .content_list .content .img_wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* 상품 텍스트 영역 */
+.cart_wrap .content_list .content .txt_box {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding-right: 16px !important;
+}
+
+.cart_wrap .content_list .content .txt_box .tt {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #222 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.cart_wrap .content_list .content .txt_box .tt:hover {
+    color: #5a8648 !important;
+}
+
+/* 상품 가격 (단가) */
+.cart_wrap .content_list .content .txt_box .s_price {
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+.cart_wrap .content_list .content .txt_box .s_price .org {
+    color: #999 !important;
+    text-decoration: line-through !important;
+    font-size: 13px !important;
+    margin-right: 6px !important;
+}
+
+/* 수량 + 가격 + 삭제 영역 */
+.cart_wrap .content_list .content .sum_quantity {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+/* 수량 조절기 */
+.cart_wrap .spinner_box {
+    display: flex !important;
+    align-items: center !important;
+    background: #f8f8f8 !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.cart_wrap .spinner_box .minus,
+.cart_wrap .spinner_box .plus {
+    width: 36px !important;
+    height: 36px !important;
+    background: transparent !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: background 0.15s !important;
+    font-size: 0 !important;
+}
+
+.cart_wrap .spinner_box .minus:hover,
+.cart_wrap .spinner_box .plus:hover {
+    background: #e8e8e8 !important;
+}
+
+.cart_wrap .spinner_box .minus::after,
+.cart_wrap .spinner_box .plus::after {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    color: #555 !important;
+}
+
+.cart_wrap .spinner_box .minus::after {
+    content: '−' !important;
+}
+
+.cart_wrap .spinner_box .plus::after {
+    content: '+' !important;
+}
+
+.cart_wrap .spinner_box .minus img,
+.cart_wrap .spinner_box .plus img {
+    display: none !important;
+}
+
+.cart_wrap .spinner_box .idx {
+    border-left: 1px solid #e0e0e0 !important;
+    border-right: 1px solid #e0e0e0 !important;
+}
+
+.cart_wrap .spinner_box .idx input {
+    width: 48px !important;
+    height: 36px !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #222 !important;
+    border: none !important;
+    background: #fff !important;
+}
+
+/* 총 가격 */
+.cart_wrap .content_list .content .b_price {
+    min-width: 90px !important;
+    text-align: right !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+}
+
+/* 삭제 버튼 */
+.cart_wrap .content_list .content .del {
+    width: 32px !important;
+    height: 32px !important;
+    background: #f5f5f5 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    margin-left: 8px !important;
+}
+
+.cart_wrap .content_list .content .del:hover {
+    background: #ffebee !important;
+}
+
+.cart_wrap .content_list .content .del::after {
+    content: '×' !important;
+    font-size: 18px !important;
+    color: #999 !important;
+    line-height: 1 !important;
+}
+
+.cart_wrap .content_list .content .del:hover::after {
+    color: #e53935 !important;
+}
+
+.cart_wrap .content_list .content .del img {
+    display: none !important;
+}
+
+/* 장바구니 리스트 반응형 */
+@media (max-width: 768px) {
+    .cart_wrap .content_list .content {
+        flex-wrap: wrap !important;
+        padding: 16px 0 !important;
+    }
+
+    .cart_wrap .content_list .content .chk_box {
+        width: 32px !important;
+    }
+
+    .cart_wrap .content_list .content .prod {
+        flex: 1 !important;
+        min-width: calc(100% - 32px) !important;
+    }
+
+    .cart_wrap .content_list .content .img_wrap {
+        width: 64px !important;
+        height: 64px !important;
+        min-width: 64px !important;
+    }
+
+    .cart_wrap .content_list .content .sum_quantity {
+        width: 100% !important;
+        margin-top: 12px !important;
+        padding-left: 32px !important;
+        justify-content: space-between !important;
+    }
+
+    .cart_wrap .spinner_box .minus,
+    .cart_wrap .spinner_box .plus {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .cart_wrap .spinner_box .idx input {
+        width: 40px !important;
+        height: 32px !important;
+    }
+
+    .cart_wrap .content_list .content .b_price {
+        font-size: 16px !important;
+    }
+}
