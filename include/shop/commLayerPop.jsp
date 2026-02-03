@@ -7,7 +7,10 @@
 	background: #F8F9FA;
 	border-top: 1px solid #E5E5E5;
 	padding: 20px 0;
-	margin-top: 40px;
+	display: none;
+}
+.footer-sub-menu.show {
+	display: block;
 }
 .footer-sub-menu .inner {
 	max-width: 1200px;
@@ -60,7 +63,7 @@
 	margin-top: 2px;
 }
 </style>
-<div class="footer-sub-menu">
+<div class="footer-sub-menu" id="footerSubMenu">
 	<div class="inner">
 		<a href="<c:url value='/recipe.do' />" class="menu-item">
 			<span class="icon">🍳</span>
@@ -78,6 +81,18 @@
 		</a>
 	</div>
 </div>
+<script>
+$(document).ready(function(){
+	var $footerSubMenu = $('#footerSubMenu');
+	var $footer = $('.foot_wrap, .footer_wrap, footer').first();
+	if($footer.length > 0) {
+		$footer.before($footerSubMenu);
+	} else {
+		$('.wrapper').after($footerSubMenu);
+	}
+	$footerSubMenu.addClass('show');
+});
+</script>
 
 <!-- 기존 팝업 (하위 호환용) -->
 <div class="layer_pop_wrap">

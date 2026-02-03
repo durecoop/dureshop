@@ -2,83 +2,102 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style>
-/* 하단 서브 메뉴 스타일 */
-.footer-sub-menu {
-	background: #F8F9FA;
-	border-top: 1px solid #E5E5E5;
-	padding: 20px 0;
+/* 푸터 서비스 영역 */
+.footer-service {
+	background: #fff;
+	border-top: 1px solid #eee;
+	padding: 32px 20px;
 }
 
-.footer-sub-menu .inner {
-	max-width: 1200px;
+.footer-service .inner {
+	max-width: 1100px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	gap: 40px;
+	gap: 24px;
 }
 
-.footer-sub-menu .menu-item {
+.footer-service .service-item {
 	display: flex;
 	align-items: center;
-	gap: 10px;
-	padding: 12px 24px;
-	background: #fff;
-	border: 1px solid #E0E0E0;
-	border-radius: 8px;
+	gap: 14px;
+	padding: 16px 28px;
+	background: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 12px;
 	text-decoration: none;
-	transition: all 0.2s ease;
+	transition: all 0.25s ease;
+	min-width: 200px;
 }
 
-.footer-sub-menu .menu-item:hover {
-	border-color: #3D6041;
-	background: #F3F6F4;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(61, 96, 65, 0.15);
+.footer-service .service-item:hover {
+	background: #f8faf7;
+	border-color: #5a8648;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(90, 134, 72, 0.12);
 }
 
-.footer-sub-menu .menu-item .icon {
-	width: 32px;
-	height: 32px;
-	background: #3D6041;
-	border-radius: 50%;
+.footer-service .service-item .icon-wrap {
+	width: 44px;
+	height: 44px;
+	background: linear-gradient(135deg, #5a8648 0%, #7aa868 100%);
+	border-radius: 12px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 16px;
+	font-size: 20px;
+	flex-shrink: 0;
+	box-shadow: 0 4px 12px rgba(90, 134, 72, 0.25);
 }
 
-.footer-sub-menu .menu-item .text {
+.footer-service .service-item .text-wrap {
 	display: flex;
 	flex-direction: column;
+	gap: 2px;
 }
 
-.footer-sub-menu .menu-item .title {
+.footer-service .service-item .title {
 	font-size: 15px;
 	font-weight: 600;
-	color: #1D271E;
+	color: #1a1a1a;
 }
 
-.footer-sub-menu .menu-item .desc {
+.footer-service .service-item .desc {
 	font-size: 12px;
-	color: #828284;
-	margin-top: 2px;
+	color: #888;
+}
+
+.footer-service .service-item:hover .title {
+	color: #5a8648;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+	.footer-service .inner {
+		flex-direction: column;
+		gap: 12px;
+	}
+	.footer-service .service-item {
+		min-width: auto;
+		width: 100%;
+		justify-content: center;
+	}
 }
 </style>
 
-<!-- 하단 서브 메뉴 (요리조리, 두레이야기) -->
-<div class="footer-sub-menu">
+<!-- 푸터 서비스 (요리조리, 두레이야기) -->
+<div class="footer-service">
 	<div class="inner">
-		<a href="<c:url value='/recipe.do' />" class="menu-item">
-			<span class="icon">🍳</span>
-			<span class="text">
+		<a href="<c:url value='/recipe.do' />" class="service-item">
+			<span class="icon-wrap">🍳</span>
+			<span class="text-wrap">
 				<span class="title">요리조리</span>
 				<span class="desc">두레생협 레시피</span>
 			</span>
 		</a>
-		<a href="<c:url value='/story.do' />" class="menu-item">
-			<span class="icon">📖</span>
-			<span class="text">
+		<a href="<c:url value='/story.do' />" class="service-item">
+			<span class="icon-wrap">📖</span>
+			<span class="text-wrap">
 				<span class="title">두레이야기</span>
 				<span class="desc">생협 소식과 이야기</span>
 			</span>

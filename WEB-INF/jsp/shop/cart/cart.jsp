@@ -60,8 +60,8 @@
 
 .cart_tab_wrap li a {
 	display: block;
-	padding: 14px 0;
-	font-size: 15px;
+	padding: 16px 0;
+	font-size: 18px;
 	font-weight: 500;
 	color: var(--cart-text-gray);
 	border-bottom: 3px solid transparent;
