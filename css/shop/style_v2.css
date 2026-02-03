@@ -24714,56 +24714,52 @@ body .img_wrap img,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 20px !important;
+    gap: 12px !important;
     flex-wrap: wrap !important;
 }
 
-.go_shop_wrap .txt_box {
-    flex-shrink: 0 !important;
-}
-
-/* 서비스 버튼 스타일 */
-.go_shop_wrap .service-btn {
+/* 서비스 버튼 - 매장찾기와 동일 스타일 */
+.go_shop_wrap .btn_service {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    background: rgba(255,255,255,0.95) !important;
-    border: none !important;
-    border-radius: 24px !important;
+    gap: 6px !important;
+    padding: 12px 20px !important;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 25px !important;
     text-decoration: none !important;
     transition: all 0.2s ease !important;
+}
+
+.go_shop_wrap .btn_service:hover {
+    border-color: #5a8648 !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
 
-.go_shop_wrap .service-btn:hover {
-    background: #fff !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+.go_shop_wrap .btn_service .ico {
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
 }
 
-.go_shop_wrap .service-btn .icon {
-    font-size: 18px !important;
+.go_shop_wrap .btn_service .txt {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
 }
 
-.go_shop_wrap .service-btn .text {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    color: #2d5a27 !important;
-}
-
-.go_shop_wrap .service-btn:hover .text {
-    color: #1a3d16 !important;
+.go_shop_wrap .btn_service:hover .txt {
+    color: #5a8648 !important;
 }
 
 /* 반응형 */
 @media (max-width: 768px) {
     .go_shop_wrap .inner {
         flex-direction: column !important;
-        gap: 12px !important;
+        gap: 10px !important;
         padding: 20px !important;
-    }
-    .go_shop_wrap .txt_box {
-        text-align: center !important;
     }
 }
