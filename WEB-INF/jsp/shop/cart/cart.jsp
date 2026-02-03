@@ -366,6 +366,7 @@
 										<a href="javascript:void(0);" class="btn_modify" onclick="FnDeliveryDateOpen();">변경</a>
 									</td>
 								</tr>
+								<%-- 택배 배송 안내 메시지 (필요시 주석 해제)
 								<c:if test="${addr.deliveryGb eq '2'}">
 								<tr>
 									<td colspan="2">
@@ -375,6 +376,7 @@
 									</td>
 								</tr>
 								</c:if>
+								--%>
 							</table>
 						</div>
 
