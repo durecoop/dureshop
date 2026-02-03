@@ -2,105 +2,101 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style>
-/* 푸터 서비스 영역 */
-.footer-service {
-	background: #fff;
-	border-top: 1px solid #eee;
-	padding: 32px 20px;
+/* go_shop_wrap 확장 스타일 */
+.go_shop_wrap .inner {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 20px !important;
+	flex-wrap: wrap !important;
 }
 
-.footer-service .inner {
-	max-width: 1100px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	gap: 24px;
+.go_shop_wrap .txt_box {
+	flex-shrink: 0 !important;
 }
 
-.footer-service .service-item {
-	display: flex;
-	align-items: center;
-	gap: 14px;
-	padding: 16px 28px;
-	background: #fafafa;
-	border: 1px solid #eee;
-	border-radius: 12px;
-	text-decoration: none;
-	transition: all 0.25s ease;
-	min-width: 200px;
+/* 서비스 버튼 스타일 */
+.go_shop_wrap .service-btn {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 8px !important;
+	padding: 10px 20px !important;
+	background: rgba(255,255,255,0.95) !important;
+	border: none !important;
+	border-radius: 24px !important;
+	text-decoration: none !important;
+	transition: all 0.2s ease !important;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
 
-.footer-service .service-item:hover {
-	background: #f8faf7;
-	border-color: #5a8648;
-	transform: translateY(-3px);
-	box-shadow: 0 8px 24px rgba(90, 134, 72, 0.12);
+.go_shop_wrap .service-btn:hover {
+	background: #fff !important;
+	transform: translateY(-2px) !important;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
 }
 
-.footer-service .service-item .icon-wrap {
-	width: 44px;
-	height: 44px;
-	background: linear-gradient(135deg, #5a8648 0%, #7aa868 100%);
-	border-radius: 12px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 20px;
-	flex-shrink: 0;
-	box-shadow: 0 4px 12px rgba(90, 134, 72, 0.25);
+.go_shop_wrap .service-btn .icon {
+	font-size: 18px !important;
 }
 
-.footer-service .service-item .text-wrap {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
+.go_shop_wrap .service-btn .text {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	color: #2d5a27 !important;
 }
 
-.footer-service .service-item .title {
-	font-size: 15px;
-	font-weight: 600;
-	color: #1a1a1a;
+.go_shop_wrap .service-btn:hover .text {
+	color: #1a3d16 !important;
 }
 
-.footer-service .service-item .desc {
-	font-size: 12px;
-	color: #888;
+/* 기존 매장찾기 버튼 스타일 조정 */
+.go_shop_wrap .inner > a:last-of-type img {
+	height: 42px !important;
 }
 
-.footer-service .service-item:hover .title {
-	color: #5a8648;
+/* 바우처 버튼 숨김 (중복 방지) */
+.go_shop_wrap .voucher_btn {
+	display: none !important;
 }
 
 /* 반응형 */
-@media (max-width: 600px) {
-	.footer-service .inner {
-		flex-direction: column;
-		gap: 12px;
+@media (max-width: 768px) {
+	.go_shop_wrap .inner {
+		flex-direction: column !important;
+		gap: 12px !important;
+		padding: 20px !important;
 	}
-	.footer-service .service-item {
-		min-width: auto;
-		width: 100%;
-		justify-content: center;
+	.go_shop_wrap .txt_box {
+		text-align: center !important;
+	}
+	.go_shop_wrap .service-buttons {
+		display: flex !important;
+		gap: 10px !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
 	}
 }
 </style>
 
-<!-- 푸터 서비스 (요리조리, 두레이야기) -->
-<div class="footer-service">
-	<div class="inner">
-		<a href="<c:url value='/recipe.do' />" class="service-item">
-			<span class="icon-wrap">🍳</span>
-			<span class="text-wrap">
-				<span class="title">요리조리</span>
-				<span class="desc">두레생협 레시피</span>
-			</span>
+<!-- 요리조리, 두레이야기 버튼 (go_shop_wrap에 삽입) -->
+<script>
+$(document).ready(function() {
+	// go_shop_wrap의 inner에 서비스 버튼 추가
+	var serviceButtons = `
+		<a href="<c:url value='/recipe.do' />" class="service-btn">
+			<span class="icon">🍳</span>
+			<span class="text">요리조리</span>
 		</a>
-		<a href="<c:url value='/story.do' />" class="service-item">
-			<span class="icon-wrap">📖</span>
-			<span class="text-wrap">
-				<span class="title">두레이야기</span>
-				<span class="desc">생협 소식과 이야기</span>
-			</span>
+		<a href="<c:url value='/story.do' />" class="service-btn">
+			<span class="icon">📖</span>
+			<span class="text">두레이야기</span>
 		</a>
-	</div>
-</div>
+	`;
+
+	// 매장찾기 버튼 앞에 삽입
+	var $goShopInner = $('.go_shop_wrap .inner');
+	if ($goShopInner.length > 0) {
+		$goShopInner.find('.txt_box').after(serviceButtons);
+	}
+});
+</script>

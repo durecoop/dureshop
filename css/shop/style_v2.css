@@ -24708,84 +24708,62 @@ body .img_wrap img,
 }
 
 /* ========================================
-   푸터 서비스 영역
+   go_shop_wrap 서비스 버튼 통합
    ======================================== */
-.footer-service {
-    background: #fff !important;
-    border-top: 1px solid #eee !important;
-    padding: 32px 20px !important;
-}
-
-.footer-service .inner {
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    gap: 24px !important;
-}
-
-.footer-service .service-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 14px !important;
-    padding: 16px 28px !important;
-    background: #fafafa !important;
-    border: 1px solid #eee !important;
-    border-radius: 12px !important;
-    text-decoration: none !important;
-    transition: all 0.25s ease !important;
-    min-width: 200px !important;
-}
-
-.footer-service .service-item:hover {
-    background: #f8faf7 !important;
-    border-color: #5a8648 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 24px rgba(90, 134, 72, 0.12) !important;
-}
-
-.footer-service .service-item .icon-wrap {
-    width: 44px !important;
-    height: 44px !important;
-    background: linear-gradient(135deg, #5a8648 0%, #7aa868 100%) !important;
-    border-radius: 12px !important;
+.go_shop_wrap .inner {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 20px !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+.go_shop_wrap .txt_box {
     flex-shrink: 0 !important;
-    box-shadow: 0 4px 12px rgba(90, 134, 72, 0.25) !important;
 }
 
-.footer-service .service-item .text-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2px !important;
+/* 서비스 버튼 스타일 */
+.go_shop_wrap .service-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    background: rgba(255,255,255,0.95) !important;
+    border: none !important;
+    border-radius: 24px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
 
-.footer-service .service-item .title {
-    font-size: 15px !important;
+.go_shop_wrap .service-btn:hover {
+    background: #fff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+}
+
+.go_shop_wrap .service-btn .icon {
+    font-size: 18px !important;
+}
+
+.go_shop_wrap .service-btn .text {
+    font-size: 14px !important;
     font-weight: 600 !important;
-    color: #1a1a1a !important;
+    color: #2d5a27 !important;
 }
 
-.footer-service .service-item .desc {
-    font-size: 12px !important;
-    color: #888 !important;
+.go_shop_wrap .service-btn:hover .text {
+    color: #1a3d16 !important;
 }
 
-.footer-service .service-item:hover .title {
-    color: #5a8648 !important;
-}
-
-@media (max-width: 600px) {
-    .footer-service .inner {
+/* 반응형 */
+@media (max-width: 768px) {
+    .go_shop_wrap .inner {
         flex-direction: column !important;
         gap: 12px !important;
+        padding: 20px !important;
     }
-    .footer-service .service-item {
-        min-width: auto !important;
-        width: 100% !important;
-        justify-content: center !important;
+    .go_shop_wrap .txt_box {
+        text-align: center !important;
     }
 }
