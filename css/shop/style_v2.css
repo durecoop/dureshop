@@ -24270,11 +24270,35 @@ body .img_wrap img,
 
 /* content_body 전체 박스 */
 .cart_wrap .content_body {
-    background: #fff !important;
-    border: 1px solid #e5e5e5 !important;
+    background: #fafafa !important;
+    border: 1px solid #e8e8e8 !important;
     border-radius: 12px !important;
-    padding: 20px !important;
+    padding: 24px !important;
+    margin-bottom: 24px !important;
+}
+
+/* 새로 주문하기 타이틀 영역 */
+.cart_wrap .content_body > div:first-child,
+.cart_wrap .content_body .order_type {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding-bottom: 16px !important;
     margin-bottom: 20px !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.cart_wrap .content_body > div:first-child input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+    accent-color: #5a8648 !important;
+}
+
+.cart_wrap .content_body > div:first-child span,
+.cart_wrap .content_body > div:first-child label {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
 }
 
 /* 배송 정보 카드 */
@@ -24283,7 +24307,7 @@ body .img_wrap img,
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 0 !important;
 }
 
 .cart_wrap .address_wrap table {
@@ -24293,57 +24317,69 @@ body .img_wrap img,
 
 .cart_wrap .address_wrap table tr {
     display: flex !important;
-    align-items: center !important;
-    padding: 10px 0 !important;
-    border-bottom: 1px solid #f0f0f0 !important;
+    align-items: flex-start !important;
+    padding: 14px 0 !important;
+    border-bottom: 1px solid #efefef !important;
+    min-height: 48px !important;
 }
 
 .cart_wrap .address_wrap table tr:last-child {
     border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.cart_wrap .address_wrap table tr:first-child {
+    padding-top: 0 !important;
 }
 
 .cart_wrap .address_wrap th {
-    min-width: 60px !important;
-    width: 60px !important;
+    min-width: 56px !important;
+    width: 56px !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
-    color: #5a8648 !important;
-    padding: 0 !important;
+    font-weight: 500 !important;
+    color: #888 !important;
+    padding: 2px 0 0 0 !important;
     flex-shrink: 0 !important;
 }
 
 .cart_wrap .address_wrap td {
     flex: 1 !important;
-    font-size: 14px !important;
-    color: #333 !important;
+    font-size: 15px !important;
+    color: #222 !important;
     padding: 0 !important;
     display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    line-height: 1.5 !important;
 }
 
+.cart_wrap .address_wrap td > span:first-child,
 .cart_wrap .address_wrap td .roboto {
-    font-weight: 600 !important;
-    color: #333 !important;
+    flex: 1 !important;
+    font-weight: 500 !important;
+    color: #222 !important;
+    word-break: keep-all !important;
 }
 
 .cart_wrap .address_wrap .btn_modify {
-    padding: 6px 14px !important;
+    padding: 6px 16px !important;
     font-size: 13px !important;
-    color: #5a8648 !important;
+    font-weight: 500 !important;
+    color: #666 !important;
     background: #fff !important;
-    border: 1px solid #d0d0d0 !important;
-    border-radius: 20px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
     margin-left: auto !important;
     transition: all 0.2s ease !important;
     cursor: pointer !important;
     flex-shrink: 0 !important;
+    white-space: nowrap !important;
 }
 
 .cart_wrap .address_wrap .btn_modify:hover {
-    background: #5a8648 !important;
-    border-color: #5a8648 !important;
-    color: #fff !important;
+    background: #f5f5f5 !important;
+    border-color: #ccc !important;
+    color: #333 !important;
 }
 
 .cart_wrap .address_wrap .more {
@@ -24355,15 +24391,15 @@ body .img_wrap img,
 .cart_wrap .wrap_addorder {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     padding-bottom: 16px !important;
-    margin-bottom: 16px !important;
-    border-bottom: 1px solid #e8e8e8 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid #e0e0e0 !important;
 }
 
 .cart_wrap .wrap_addorder input[type="radio"] {
-    width: 20px !important;
-    height: 20px !important;
+    width: 18px !important;
+    height: 18px !important;
     accent-color: #5a8648 !important;
     cursor: pointer !important;
 }
