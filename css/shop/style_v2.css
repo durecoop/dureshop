@@ -24264,28 +24264,52 @@ body .img_wrap img,
     box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 }
 
+/* ========================================
+   새로 주문하기 박스 (배송정보) 디자인
+   ======================================== */
+
+/* content_body 전체 박스 */
+.cart_wrap .content_body {
+    background: #fff !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+}
+
 /* 배송 정보 카드 */
 .cart_wrap .address_wrap {
-    padding: 16px 20px !important;
-    background: #f8faf7 !important;
-    border: 1px solid #e8ede6 !important;
-    border-radius: 10px !important;
-    margin-bottom: 20px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+.cart_wrap .address_wrap table {
+    width: 100% !important;
+    border-collapse: collapse !important;
 }
 
 .cart_wrap .address_wrap table tr {
     display: flex !important;
     align-items: center !important;
-    padding: 6px 0 !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.cart_wrap .address_wrap table tr:last-child {
+    border-bottom: none !important;
 }
 
 .cart_wrap .address_wrap th {
-    min-width: 55px !important;
-    width: auto !important;
-    font-size: 13px !important;
+    min-width: 60px !important;
+    width: 60px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     color: #5a8648 !important;
     padding: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 .cart_wrap .address_wrap td {
@@ -24293,26 +24317,63 @@ body .img_wrap img,
     font-size: 14px !important;
     color: #333 !important;
     padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.cart_wrap .address_wrap td .roboto {
+    font-weight: 600 !important;
+    color: #333 !important;
 }
 
 .cart_wrap .address_wrap .btn_modify {
-    padding: 5px 12px !important;
-    font-size: 12px !important;
+    padding: 6px 14px !important;
+    font-size: 13px !important;
     color: #5a8648 !important;
     background: #fff !important;
-    border: 1px solid #5a8648 !important;
-    border-radius: 4px !important;
-    margin-left: 10px !important;
+    border: 1px solid #d0d0d0 !important;
+    border-radius: 20px !important;
+    margin-left: auto !important;
     transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
 }
 
 .cart_wrap .address_wrap .btn_modify:hover {
     background: #5a8648 !important;
+    border-color: #5a8648 !important;
     color: #fff !important;
 }
 
 .cart_wrap .address_wrap .more {
     display: none !important;
+}
+
+/* 주문타입 라디오 버튼 스타일 */
+.cart_wrap .content_body .wrap_addorder,
+.cart_wrap .wrap_addorder {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 16px !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+
+.cart_wrap .wrap_addorder input[type="radio"] {
+    width: 20px !important;
+    height: 20px !important;
+    accent-color: #5a8648 !important;
+    cursor: pointer !important;
+}
+
+.cart_wrap .wrap_addorder label,
+.cart_wrap .wrap_addorder .txt {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    cursor: pointer !important;
 }
 
 /* 전체선택 영역 */
