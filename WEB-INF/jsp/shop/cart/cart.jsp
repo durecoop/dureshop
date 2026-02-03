@@ -530,15 +530,15 @@
 								<th>생활재금액</th>
 								<td><span class="roboto" id="id_pickGoodsAmt_0">0</span> 원</td>
 							</tr>
-							<tr>
+							<tr style="display:none;">
 								<th>적립쿠폰</th>
 								<td><span class="roboto" id="id_couponAmtS_0">0</span> 원</td>
 							</tr>
-							<tr>
+							<tr style="display:none;">
 								<th>할인쿠폰</th>
 								<td><span class="roboto" id="id_couponAmtD_0">0</span> 원</td>
 							</tr>
-							<tr>
+							<tr style="display:none;">
 								<th>결제쿠폰</th>
 								<td><span class="roboto" id="id_couponAmtP_0">0</span> 원</td>
 							</tr>
@@ -546,7 +546,7 @@
 								<th>출자금</th>
 								<td><span class="roboto" id="id_investAmt_0">0</span> 원</td>
 							</tr>
-							<tr>
+							<tr style="display:none;">
 								<th>배송비</th>
 								<td><span class="roboto" id="id_deliveryAmt_0">0</span> 원</td>
 							</tr>

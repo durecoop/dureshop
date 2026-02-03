@@ -24889,22 +24889,15 @@ body .img_wrap img,
 }
 
 /* 결제박스 - 적립쿠폰/할인쿠폰/결제쿠폰/배송비 숨김 */
-.cart_wrap .price_box tr:has(#id_couponAmtS_0),
-.cart_wrap .price_box tr:has(#id_couponAmtS_1),
-.cart_wrap .price_box tr:has(#id_couponAmtS_2),
-.cart_wrap .price_box tr:has(#id_couponAmtS_3),
-.cart_wrap .price_box tr:has(#id_couponAmtD_0),
-.cart_wrap .price_box tr:has(#id_couponAmtD_1),
-.cart_wrap .price_box tr:has(#id_couponAmtD_2),
-.cart_wrap .price_box tr:has(#id_couponAmtD_3),
-.cart_wrap .price_box tr:has(#id_couponAmtP_0),
-.cart_wrap .price_box tr:has(#id_couponAmtP_1),
-.cart_wrap .price_box tr:has(#id_couponAmtP_2),
-.cart_wrap .price_box tr:has(#id_couponAmtP_3),
-.cart_wrap .price_box tr:has(#id_deliveryAmt_0),
-.cart_wrap .price_box tr:has(#id_deliveryAmt_1),
-.cart_wrap .price_box tr:has(#id_deliveryAmt_2),
-.cart_wrap .price_box tr:has(#id_deliveryAmt_3) {
+/* 순서: 1.생활재금액 2.적립쿠폰 3.할인쿠폰 4.결제쿠폰 5.출자금 6.배송비 7.결제예정 */
+.cart_wrap .price_box table tr:nth-child(2),
+.cart_wrap .price_box table tr:nth-child(3),
+.cart_wrap .price_box table tr:nth-child(4),
+.cart_wrap .price_box table tr:nth-child(6),
+.cart_wrap .price_box tr:nth-child(2),
+.cart_wrap .price_box tr:nth-child(3),
+.cart_wrap .price_box tr:nth-child(4),
+.cart_wrap .price_box tr:nth-child(6) {
     display: none !important;
 }
 
