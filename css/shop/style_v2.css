@@ -24268,13 +24268,13 @@ body .img_wrap img,
    새로 주문하기 박스 (배송정보) 디자인
    ======================================== */
 
-/* content_body 전체 박스 */
+/* content_body 전체 박스 - 테두리 없음 */
 .cart_wrap .content_body {
-    background: #fafafa !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 12px !important;
-    padding: 24px !important;
-    margin-bottom: 24px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
 }
 
 /* 새로 주문하기 타이틀 영역 */
@@ -24905,7 +24905,7 @@ body .img_wrap img,
 .cart_wrap .content_list .content {
     position: relative !important;
     display: block !important;
-    padding: 16px 0 !important;
+    padding: 10px 0 !important;
     border-bottom: 1px solid #f0f0f0 !important;
     background: #fff !important;
 }
@@ -24913,12 +24913,13 @@ body .img_wrap img,
 /* ★★★ prod_wrap - CSS GRID 컨테이너 ★★★ */
 .cart_wrap .content_list .content .prod_wrap {
     display: grid !important;
-    grid-template-columns: 40px 1fr auto 32px !important;
+    grid-template-columns: 36px 1fr auto 28px !important;
     grid-template-areas: "chk prod sumqty del" !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 12px !important;
     width: 100% !important;
-    min-height: 70px !important;
+    min-height: 56px !important;
+    padding: 8px 0 !important;
 }
 
 /* 1. 체크박스 - grid-area: chk */
@@ -24927,8 +24928,9 @@ body .img_wrap img,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px !important;
-    height: 70px !important;
+    width: 36px !important;
+    height: auto !important;
+    align-self: center !important;
 }
 
 .cart_wrap .content_list .chk_box input[type="checkbox"] {
@@ -24944,26 +24946,26 @@ body .img_wrap img,
     grid-area: prod !important;
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     min-width: 0 !important;
-    height: 70px !important;
+    height: auto !important;
 }
 
 .cart_wrap .content_list .prod > a,
 .cart_wrap .content_list .prod > div {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     text-decoration: none !important;
     width: 100% !important;
 }
 
 /* 썸네일 이미지 */
 .cart_wrap .content_list .img_wrap {
-    width: 70px !important;
-    height: 70px !important;
-    min-width: 70px !important;
-    border-radius: 8px !important;
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    border-radius: 6px !important;
     overflow: hidden !important;
     border: 1px solid #eee !important;
     background: #f9f9f9 !important;
@@ -25015,8 +25017,8 @@ body .img_wrap img,
     grid-area: sumqty !important;
     display: flex !important;
     align-items: center !important;
-    gap: 16px !important;
-    height: 70px !important;
+    gap: 12px !important;
+    height: auto !important;
 }
 
 /* 수량 조절기 */
@@ -25025,14 +25027,14 @@ body .img_wrap img,
     align-items: center !important;
     background: #fff !important;
     border: 1px solid #ddd !important;
-    border-radius: 6px !important;
+    border-radius: 4px !important;
     overflow: hidden !important;
 }
 
 .cart_wrap .spinner_box .minus,
 .cart_wrap .spinner_box .plus {
-    width: 32px !important;
-    height: 32px !important;
+    width: 28px !important;
+    height: 28px !important;
     background: #fafafa !important;
     border: none !important;
     display: flex !important;
@@ -25040,6 +25042,9 @@ body .img_wrap img,
     justify-content: center !important;
     cursor: pointer !important;
     font-size: 0 !important;
+    color: transparent !important;
+    text-indent: -9999px !important;
+    position: relative !important;
 }
 
 .cart_wrap .spinner_box .minus:hover,
@@ -25054,14 +25059,18 @@ body .img_wrap img,
 
 .cart_wrap .spinner_box .minus::after {
     content: '−' !important;
-    font-size: 16px !important;
+    position: absolute !important;
+    font-size: 14px !important;
     color: #555 !important;
+    text-indent: 0 !important;
 }
 
 .cart_wrap .spinner_box .plus::after {
     content: '+' !important;
-    font-size: 16px !important;
+    position: absolute !important;
+    font-size: 14px !important;
     color: #555 !important;
+    text-indent: 0 !important;
 }
 
 .cart_wrap .spinner_box .idx {
@@ -25070,10 +25079,10 @@ body .img_wrap img,
 }
 
 .cart_wrap .spinner_box .idx input {
-    width: 40px !important;
-    height: 32px !important;
+    width: 36px !important;
+    height: 28px !important;
     text-align: center !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
     color: #333 !important;
     border: none !important;
@@ -25097,8 +25106,8 @@ body .img_wrap img,
     position: static !important;
     top: unset !important;
     right: unset !important;
-    width: 30px !important;
-    height: 30px !important;
+    width: 26px !important;
+    height: 26px !important;
     background: #f5f5f5 !important;
     border: none !important;
     border-radius: 50% !important;
@@ -25107,6 +25116,8 @@ body .img_wrap img,
     justify-content: center !important;
     cursor: pointer !important;
     font-size: 0 !important;
+    color: transparent !important;
+    text-indent: -9999px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -25117,9 +25128,11 @@ body .img_wrap img,
 
 .cart_wrap .content_list .btn_delete::after {
     content: '×' !important;
-    font-size: 18px !important;
+    position: absolute !important;
+    font-size: 16px !important;
     font-weight: 300 !important;
     color: #999 !important;
+    text-indent: 0 !important;
 }
 
 .cart_wrap .content_list .btn_delete:hover::after {
