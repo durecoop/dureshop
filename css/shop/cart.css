@@ -40,13 +40,25 @@
 .cart_wrap .content_wrap .content .prod_wrap .chk_box label,
 .cart_wrap .content_list .content .prod_wrap .chk_box label,
 .cart_wrap .content_wrap .content .chk_box label,
-.cart_wrap .content_list .content .chk_box label {
+.cart_wrap .content_list .content .chk_box label,
+.cart_wrap .content_wrap .content .prod_wrap .check_box[type=checkbox]:not(old) + label,
+.cart_wrap .content_list .content .prod_wrap .check_box[type=checkbox]:not(old) + label {
   margin-top: 0 !important;
   padding-top: 0 !important;
   padding-left: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  position: relative !important;
+  top: 0 !important;
+}
+
+.cart_wrap .content_wrap .content .prod_wrap .check_box[type=checkbox]:not(old) + label:before,
+.cart_wrap .content_list .content .prod_wrap .check_box[type=checkbox]:not(old) + label:before {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
 }
 
 .cart_wrap .content_wrap .content .prod,
