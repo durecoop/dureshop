@@ -25,16 +25,16 @@
 .cart_wrap .content_list .content .chk_box {
   position: relative !important;
   float: none !important;
-  width: 24px !important;
-  min-width: 24px !important;
-  height: 60px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 70px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
   align-self: center !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .cart_wrap .content_wrap .content .prod_wrap .chk_box label,
@@ -78,11 +78,13 @@
 .cart_wrap .content_wrap .content .img_wrap,
 .cart_wrap .content_list .content .img_wrap {
   display: block !important;
-  width: 60px !important;
-  height: 60px !important;
-  min-width: 60px !important;
+  width: 70px !important;
+  height: 70px !important;
+  min-width: 70px !important;
   flex-shrink: 0 !important;
   position: relative !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 
 .cart_wrap .content_wrap .content .prod .txt_box,
@@ -94,6 +96,14 @@
   min-width: 0 !important;
   padding-left: 0 !important;
   padding-right: 12px !important;
+}
+
+/* 단가 숨김 - 합계금액만 표시 */
+.cart_wrap .content_wrap .content .txt_box .s_price,
+.cart_wrap .content_list .content .txt_box .s_price,
+.cart_wrap .content_wrap .content .prod .txt_box .s_price,
+.cart_wrap .content_list .content .prod .txt_box .s_price {
+  display: none !important;
 }
 
 .cart_wrap .content_wrap .content .sum_quantity,
@@ -362,8 +372,8 @@
 
 /* ===== 상품 아이템 컨테이너 ===== */
 .cart_wrap .content_list .content {
-  padding: 14px 0 !important;
-  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 16px 0 !important;
+  border-bottom: 1px solid #eee !important;
   margin: 0 !important;
   background: #fff !important;
 }
@@ -377,9 +387,9 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 12px !important;
+  gap: 16px !important;
   width: 100% !important;
-  min-height: 60px !important;
+  min-height: 70px !important;
 }
 
 /* 1. 체크박스 */
@@ -387,15 +397,15 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 24px !important;
-  min-width: 24px !important;
-  height: 60px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 70px !important;
   flex-shrink: 0 !important;
 }
 
 .cart_wrap .content_list .content .chk_box input {
-  width: 18px !important;
-  height: 18px !important;
+  width: 22px !important;
+  height: 22px !important;
   accent-color: #5a8648 !important;
   cursor: pointer !important;
   margin: 0 !important;
@@ -408,7 +418,7 @@
   align-items: center !important;
   flex: 1 !important;
   min-width: 0 !important;
-  gap: 12px !important;
+  gap: 16px !important;
 }
 
 .cart_wrap .content_list .content .prod > a,
@@ -416,15 +426,15 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 12px !important;
+  gap: 16px !important;
   width: 100% !important;
 }
 
 /* 2-1. 썸네일 */
 .cart_wrap .content_list .content .img_wrap {
-  width: 60px !important;
-  height: 60px !important;
-  min-width: 60px !important;
+  width: 70px !important;
+  height: 70px !important;
+  min-width: 70px !important;
   flex-shrink: 0 !important;
   border-radius: 6px !important;
   overflow: hidden !important;
@@ -438,19 +448,21 @@
   object-fit: cover !important;
 }
 
-/* 2-2. 상품명 + 단가 */
+/* 2-2. 상품명 (단가 숨김) */
 .cart_wrap .content_list .content .txt_box {
   flex: 1 !important;
   min-width: 0 !important;
-  padding-right: 16px !important;
+  padding-right: 20px !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .cart_wrap .content_list .content .txt_box .tt {
-  font-size: 14px !important;
-  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
   color: #333 !important;
   line-height: 1.4 !important;
-  margin-bottom: 4px !important;
+  margin: 0 !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
@@ -461,17 +473,9 @@
   color: #5a8648 !important;
 }
 
+/* 단가 숨김 */
 .cart_wrap .content_list .content .txt_box .s_price {
-  font-size: 13px !important;
-  color: #888 !important;
-}
-
-.cart_wrap .content_list .content .txt_box .s_price .sale,
-.cart_wrap .content_list .content .txt_box .s_price .org {
-  color: #bbb !important;
-  text-decoration: line-through !important;
-  font-size: 12px !important;
-  margin-right: 4px !important;
+  display: none !important;
 }
 
 /* 3. 수량 + 합계 영역 */
@@ -479,7 +483,7 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 16px !important;
+  gap: 20px !important;
   flex-shrink: 0 !important;
 }
 
