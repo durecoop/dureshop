@@ -235,14 +235,15 @@
   display: none !important;
 }
 
-/* ===== 배송정보 ===== */
+/* ===== 배송정보 (새로 주문하기) ===== */
 .cart_wrap .address_wrap {
   display: block !important;
-  padding: 14px 16px !important;
-  background: #f8faf7 !important;
-  border: 1px solid #e8ede6 !important;
-  border-radius: 8px !important;
+  padding: 20px !important;
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
   margin-bottom: 16px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
 }
 
 .cart_wrap .address_wrap table {
@@ -256,10 +257,10 @@
 }
 
 .cart_wrap .address_wrap table th {
-  min-width: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #5a8648;
+  min-width: 50px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #666 !important;
 }
 
 .cart_wrap .address_wrap table td {
@@ -270,20 +271,21 @@
 }
 
 .cart_wrap .address_wrap .btn_modify {
-  padding: 4px 10px;
-  font-size: 11px;
-  color: #5a8648;
-  background: #fff;
-  border: 1px solid #5a8648;
-  border-radius: 4px;
-  margin-left: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 5px 12px !important;
+  font-size: 12px !important;
+  color: #666 !important;
+  background: #f5f5f5 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  margin-left: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
 }
 
 .cart_wrap .address_wrap .btn_modify:hover {
-  background: #5a8648;
-  color: #fff;
+  background: #eee !important;
+  color: #333 !important;
+  border-color: #ccc !important;
 }
 
 .cart_wrap .address_wrap .more {
@@ -307,10 +309,10 @@
 }
 
 .cart_wrap .prod_chk_wrap .check_wrap input {
-  width: 18px;
-  height: 18px;
-  accent-color: #5a8648;
-  cursor: pointer;
+  width: 22px !important;
+  height: 22px !important;
+  accent-color: #5a8648 !important;
+  cursor: pointer !important;
 }
 
 .cart_wrap .prod_chk_wrap .check_wrap label {
