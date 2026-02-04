@@ -1,7 +1,108 @@
 /**
- * 장바구니 CSS v6.0.0
+ * 장바구니 CSS v6.2.0
  * 1줄 레이아웃: 체크박스 | 썸네일 | 상품명+단가 | 수량 | 합계 | 삭제
  */
+
+/* ===== 기존 style_v2.css 스타일 초기화 ===== */
+.cart_wrap .content_wrap .content .prod_wrap,
+.cart_wrap .content_list .content .prod_wrap {
+  position: relative !important;
+  float: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.cart_wrap .content_wrap .content .prod_wrap:after,
+.cart_wrap .content_list .content .prod_wrap:after {
+  content: none !important;
+  display: none !important;
+}
+
+.cart_wrap .content_wrap .content .prod_wrap .chk_box,
+.cart_wrap .content_list .content .prod_wrap .chk_box,
+.cart_wrap .content_wrap .content .chk_box,
+.cart_wrap .content_list .content .chk_box {
+  position: relative !important;
+  float: none !important;
+  width: 24px !important;
+  min-width: 24px !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.cart_wrap .content_wrap .content .prod,
+.cart_wrap .content_list .content .prod {
+  float: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: auto !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  gap: 12px !important;
+}
+
+.cart_wrap .content_wrap .content .prod .img_wrap,
+.cart_wrap .content_list .content .prod .img_wrap,
+.cart_wrap .content_wrap .content .img_wrap,
+.cart_wrap .content_list .content .img_wrap {
+  display: block !important;
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+}
+
+.cart_wrap .content_wrap .content .prod .txt_box,
+.cart_wrap .content_list .content .prod .txt_box,
+.cart_wrap .content_wrap .content .txt_box,
+.cart_wrap .content_list .content .txt_box {
+  display: block !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 12px !important;
+}
+
+.cart_wrap .content_wrap .content .sum_quantity,
+.cart_wrap .content_list .content .sum_quantity {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.cart_wrap .content_wrap .content .sum_quantity .spinner_box,
+.cart_wrap .content_list .content .sum_quantity .spinner_box {
+  float: none !important;
+  position: relative !important;
+  width: auto !important;
+}
+
+.cart_wrap .content_wrap .content .sum_quantity .b_price,
+.cart_wrap .content_list .content .sum_quantity .b_price {
+  float: none !important;
+  width: auto !important;
+  min-width: 80px !important;
+  text-align: right !important;
+}
+
+.cart_wrap .content_wrap .content .btn_delete,
+.cart_wrap .content_list .content .btn_delete {
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  flex-shrink: 0 !important;
+}
 
 /* ===== 기본 ===== */
 .cart_wrap {
