@@ -1,6 +1,6 @@
 /**
- * 장바구니 CSS v6.2.0
- * 1줄 레이아웃: 체크박스 | 썸네일 | 상품명+단가 | 수량 | 합계 | 삭제
+ * 장바구니 CSS v7.1.0
+ * 1줄 레이아웃: 체크박스 | 썸네일 | 상품명 | 수량 | 합계 | 삭제
  */
 
 /* ===== 기존 style_v2.css 스타일 초기화 ===== */
@@ -11,6 +11,14 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
+}
+
+/* 삭제 버튼 맨 뒤로 이동 */
+.cart_wrap .content_wrap .content .prod_wrap > .btn_delete,
+.cart_wrap .content_list .content .prod_wrap > .btn_delete,
+.cart_wrap .content_wrap .content .prod_wrap > button.btn_delete,
+.cart_wrap .content_list .content .prod_wrap > button.btn_delete {
+  order: 99 !important;
 }
 
 .cart_wrap .content_wrap .content .prod_wrap:after,
@@ -546,16 +554,24 @@
 .cart_wrap .spinner_box .idx {
   border-left: 1px solid #ddd !important;
   border-right: 1px solid #ddd !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
 }
 
 .cart_wrap .spinner_box .idx input {
   width: 40px !important;
-  height: 30px !important;
+  height: 100% !important;
   text-align: center !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   border: none !important;
   background: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 32px !important;
 }
 
 /* 3-2. 합계 금액 */
