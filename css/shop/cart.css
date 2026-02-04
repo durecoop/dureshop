@@ -206,8 +206,8 @@
 
 .cart_wrap .cart_tab_wrap li a {
   display: block;
-  padding: 12px 8px;
-  font-size: 14px;
+  padding: 14px 8px;
+  font-size: 16px;
   font-weight: 500;
   color: #888;
   background: transparent;
@@ -235,14 +235,31 @@
   display: none !important;
 }
 
+/* ===== 레이아웃: 배송정보를 전체 너비로 ===== */
+.cart_wrap .content_area {
+  display: block !important;
+}
+
+.cart_wrap .content_area .left {
+  width: 100% !important;
+  float: none !important;
+}
+
+.cart_wrap .content_area .right {
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+  margin-top: 24px !important;
+}
+
 /* ===== 배송정보 (새로 주문하기) ===== */
 .cart_wrap .address_wrap {
   display: block !important;
-  padding: 20px !important;
+  padding: 20px 24px !important;
   background: #fff !important;
   border: 1px solid #e0e0e0 !important;
   border-radius: 12px !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 20px !important;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
 }
 
