@@ -15,7 +15,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <jsp:include page="/include/${mobile}/header.jsp" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/${mobile}/cart.css?v=6.2.0">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/${mobile}/cart.css?v=6.3.0">
 <jsp:include page="/include/comm/cartComm.jsp" />
 
 <c:if test="${addr.deliveryGb eq '2'}">
